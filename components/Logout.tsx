@@ -28,19 +28,6 @@ export const Logout = () => {
         });
     };
 
-    const renewSession = useCallback(() => {
-    router.replace("/");
-    }, [router]);
-
-    useEffect(
-        () =>
-        hanko?.onSessionExpired(() => {
-            renewSession();
-        }),
-
-        [hanko, renewSession]
-    );
-
     return (
         <>
         <button type="button" onClick={logout}>Logout</button>
